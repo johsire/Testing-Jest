@@ -1,3 +1,4 @@
+
 const axios = require('axios');
 
 const logic = {
@@ -16,14 +17,17 @@ const logic = {
     } else {
       copyCart[index].qty += 1;
     }
-    return copyCart
+    return copyCart;
   },
+
   calculateSubTotal() {
     // Build me!
   },
+
   calculateTotal() {
     // Build me!
   },
+  
   removeItem() {
     // Build me!
   },

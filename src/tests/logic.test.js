@@ -1,3 +1,4 @@
+
 const { toggle, getProducts, addToCart, calculateSubTotal, calculateTotal, removeItem } = require('../Logic/logic');
 
 const product = {
@@ -32,8 +33,6 @@ describe('Tests Toggle Show button', () => {
     expect(toggle('')).toBe(true)
   })
   
-});
-
 describe('Can add item to cart', () => {
 
   test('can add an item to the cart', () => {
@@ -64,6 +63,11 @@ describe('Can add item to cart', () => {
     expect(addToCart(product, cart)).not.toBe(cart)
   })
 
+  test('if added a second unique item it should have a length of 2', () => {
+    let newCart = addToCart(product, cart);
+    expect(addToCart({ name: 'bloons', id: 50 }, newCart)).toHaveLength(2);
+  });
+ });
 });
 
 describe('can calculate sub total', () => {});

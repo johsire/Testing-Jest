@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import {products} from './db.json'
@@ -22,6 +23,9 @@ class App extends Component {
 
   addToCart = (itemToAdd) => {
     //Build Logic for this
+    this.setState({
+      cart: addToCart(itemToAdd. this.state.cart)
+    })
   }
 
   showCart = () => {
@@ -68,4 +72,3 @@ class App extends Component {
 }
 
 export default App;
-
