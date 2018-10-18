@@ -4,8 +4,11 @@ const logic = {
   toggle(value) {
     return !value
   },
-  addToCart() {
+  addToCart(product, cart) {
     // Build me!
+    product.qty = 1;
+    cart.push(product)
+    return cart;
   },
   calculateSubTotal() {
     // Build me!

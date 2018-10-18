@@ -25,7 +25,29 @@ describe('Tests Toggle Show button', () => {
   })
 });
 
-describe('Can add item to cart', () => {});
+describe('Can add item to cart', () => {
+  test('Can add item to cart', () => {
+    let cart = []
+    expect(addToCart(product, cart)).toHaveLength(1)
+  });
+
+  test('returns an array', () => {
+    let cart = [];
+    let newCart = addToCart(product, cart)
+    expect(Array.isArray(newCart)).toBeTruthy();
+  })
+
+  test('added items have quantity property', () => {
+    let cart = [];
+    expect(addToCart(product, cart)[0]).toHaveProperty('qty');
+  })
+
+  test('Updates quantity when adding a repeat item', () => {
+    let cart = [];
+    let newCart = addToCart(product, cart);
+    expect(addToCart(product, newCart)).toHaveLength(1)
+  })
+});
 
 describe('can calculate sub total', () => {});
 
