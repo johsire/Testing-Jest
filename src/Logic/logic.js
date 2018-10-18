@@ -4,11 +4,16 @@ const logic = {
   toggle(value) {
     return !value
   },
+
   addToCart(product, cart) {
-    // Build me!
-    product.qty = 1;
-    cart.push(product)
-    return cart;
+    let index = cart.findIndex((item) => item.id === product.id)
+    if(index === -1) {
+      product.qty = 1;
+      cart.push(product)
+    } else {
+      cart[index].qty += 1;
+    }
+    return cart
   },
   calculateSubTotal() {
     // Build me!
