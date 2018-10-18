@@ -25,8 +25,9 @@ const logic = {
     return subTotal.toFixed(2);
   },
 
-  calculateTotal() {
-    // Build me!
+  calculateTotal(Allproducts) {
+    let total = Allproducts.price * Allproducts.qty
+    return total.toFixed(2)
   },
   
   removeItem() {

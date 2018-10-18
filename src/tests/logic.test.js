@@ -16,6 +16,14 @@ const Newproduct = {
   image: 'http://goodtogostore.com/product-package-images/192837494.jpg',
 };
 
+const Allproducts = {
+  id: 2,
+  qty: 2,
+  product: 'Fillets',
+  price: 69.41,
+  image: 'http://goodtogostore.com/product-package-images/192837494.jpg',
+};
+
 describe('Tests Toggle Show button', () => {
 
   let cart = [];
@@ -40,7 +48,7 @@ describe('Tests Toggle Show button', () => {
   test('if given a falsey value, return true', () => {
     expect(toggle('')).toBe(true)
   })
-  
+
 describe('Can add item to cart', () => {
 
   test('can add an item to the cart', () => {
@@ -85,6 +93,11 @@ describe('can calculate sub total', () => {
   })
 });
 
-describe('can calculate Total', () => {});
+describe('can calculate Total', () => {
+
+  test('Calculate the product total price', () => {
+    expect(calculateTotal(Allproducts)).toBe('138.82')
+  })
+});
 
 describe('can remove item', () => {});
