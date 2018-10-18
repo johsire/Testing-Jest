@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 const logic = {
-  toggle() {
-    // Build me!
+  toggle(value) {
+    return !value
   },
   addToCart() {
     // Build me!

@@ -26,6 +26,9 @@ class App extends Component {
 
   showCart = () => {
     //Build Logic for this
+    this.setState({
+      showCart: toggle(this.state.showCart);
+    })
   }
 
   calculateTotal = (cart) => {
