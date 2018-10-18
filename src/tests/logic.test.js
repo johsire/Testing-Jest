@@ -9,6 +9,13 @@ const product = {
 
 describe('Tests Toggle Show button', () => {
 
+  let cart = [];
+
+  beforeEach(() => {
+    cart = [];
+  });
+
+
   test('if given true return false', () => {
     expect(toggle(true)).toBe(false);
   })
@@ -30,32 +37,31 @@ describe('Tests Toggle Show button', () => {
 describe('Can add item to cart', () => {
 
   test('can add an item to the cart', () => {
-    let cart = []
     expect(addToCart(product, cart)).toHaveLength(1)
   })
 
   test('returns an array', () => {
-    let cart = [];
     let newCart = addToCart(product, cart);
     expect(Array.isArray(newCart)).toBeTruthy();
   })
 
   test('added items have quantity property', () => {
-    let cart = [];
     expect(addToCart(product, cart)[0]).toHaveProperty('qty');
   })
 
   test('updates quantity when adding a repeated item', () => {
-    let cart = [];
     let newCart = addToCart(product, cart);
     expect(addToCart(product, newCart)).toHaveLength(1)
   })
 
   test('Should not modify product', () => {
-    let cart = [];
     addToCart(product, cart);
     // it should NOT have the prop qty:
     expect(product).not.toHaveProperty('qty');
+  })
+
+  test('returned array should be a new array', () => {
+    expect(addToCart(product, cart)).not.toBe(cart)
   })
 
 });

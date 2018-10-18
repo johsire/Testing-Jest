@@ -6,14 +6,17 @@ const logic = {
   },
 
   addToCart(product, cart) {
-    let index = cart.findIndex((item) => item.id === product.id)
+    let productCopy = { ...product };
+    let copyCart = [...cart];
+
+    let index = copyCart.findIndex((item) => item.id === productCopy.id)
     if(index === -1) {
-      product.qty = 1;
-      cart.push(product)
+      productCopy.qty = 1;
+      copyCart.push(productCopy)
     } else {
-      cart[index].qty += 1;
+      copyCart[index].qty += 1;
     }
-    return cart
+    return copyCart
   },
   calculateSubTotal() {
     // Build me!
