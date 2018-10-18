@@ -20,8 +20,9 @@ const logic = {
     return copyCart;
   },
 
-  calculateSubTotal() {
-    // Build me!
+  calculateSubTotal(Newproduct) {
+    let subTotal = Newproduct.price * Newproduct.qty
+    return subTotal.toFixed(2);
   },
 
   calculateTotal() {

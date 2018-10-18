@@ -8,6 +8,14 @@ const product = {
   image: 'http://goodtogostore.com/product-package-images/192837494.jpg',
 };
 
+const Newproduct = {
+  id: 2,
+  qty: 2,
+  product: 'Fillets',
+  price: 69.41,
+  image: 'http://goodtogostore.com/product-package-images/192837494.jpg',
+};
+
 describe('Tests Toggle Show button', () => {
 
   let cart = [];
@@ -70,7 +78,12 @@ describe('Can add item to cart', () => {
  });
 });
 
-describe('can calculate sub total', () => {});
+describe('can calculate sub total', () => {
+
+  test('calculate the products sub total', () => {
+    expect(calculateSubTotal(Newproduct)).toBe('138.82')
+  })
+});
 
 describe('can calculate Total', () => {});
 
