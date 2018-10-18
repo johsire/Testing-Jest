@@ -22,16 +22,15 @@ class App extends Component {
   }
 
   addToCart = (itemToAdd) => {
-    //Build Logic for this
     this.setState({
-      cart: addToCart(itemToAdd. this.state.cart)
+      cart: addToCart(itemToAdd, this.state.cart)
     })
   }
 
   showCart = () => {
     //Build Logic for this
     this.setState({
-      showCart: toggle(this.state.showCart);
+      showCart: toggle(this.state.showCart)
     })
   }
 
